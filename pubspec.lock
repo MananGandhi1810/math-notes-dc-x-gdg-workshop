@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  back_button_interceptor:
+    dependency: transitive
+    description:
+      name: back_button_interceptor
+      sha256: "8354b03320043db546e3f446af171faaa71384100486444113628f7db1e7fe9b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.0.3"
   boolean_selector:
     dependency: transitive
     description:
@@ -139,6 +147,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
+  loader_overlay:
+    dependency: "direct main"
+    description:
+      name: loader_overlay
+      sha256: bde643b0d3b5c9d9ea9010948d11cb3d17cdcb3f29576b9c47e0047a5b52ae75
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.3"
   matcher:
     dependency: transitive
     description:

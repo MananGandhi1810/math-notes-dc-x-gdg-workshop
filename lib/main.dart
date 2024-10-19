@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loader_overlay/loader_overlay.dart';
 import 'package:math_notes_gdsc_workshop/presentation/home_page.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class RootApp extends StatelessWidget {
       theme: ThemeData(
         colorSchemeSeed: Colors.blue,
       ),
+      builder: (context, child) => LoaderOverlay(child: child ?? Container()),
       home: const HomePage(),
     );
   }
