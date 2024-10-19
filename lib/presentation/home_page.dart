@@ -34,8 +34,12 @@ class _HomePageState extends State<HomePage> {
       final prompt = [
         Content.multi([
           TextPart(
-              "What will be the result for this math problem? Only say the number nothing else"),
-          DataPart("image/png", image.buffer.asUint8List()),
+            "What will be the result for this math problem? Only say the number nothing else. If there are multiple problems, answer all from top to bottom.",
+          ),
+          DataPart(
+            "image/png",
+            image.buffer.asUint8List(),
+          ),
         ])
       ];
       final result = await model.generateContent(prompt);
@@ -58,6 +62,11 @@ class _HomePageState extends State<HomePage> {
       );
     } catch (e) {
       debugPrint(e.toString());
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.toString()),
+        ),
+      );
     } finally {
       context.loaderOverlay.hide();
     }
