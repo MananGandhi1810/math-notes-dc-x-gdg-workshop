@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   final DrawingController _drawingController = DrawingController();
   GenerativeModel model = GenerativeModel(
     model: "gemini-1.5-pro-latest",
-    apiKey: Constants.api_key,
+    apiKey: Constants.apiKey,
   );
 
   @override
