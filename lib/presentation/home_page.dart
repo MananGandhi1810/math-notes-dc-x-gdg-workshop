@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_drawing_board/paint_contents.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:flutter_drawing_board/flutter_drawing_board.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:math_notes_gdsc_workshop/constants.dart';
-import 'package:math_notes_gdsc_workshop/main.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
     model: "gemini-1.5-pro-latest",
     apiKey: Constants.apiKey,
   );
+  bool isErasing = false;
 
   @override
   void initState() {
@@ -109,6 +110,16 @@ class _HomePageState extends State<HomePage> {
               IconButton(
                 onPressed: () => _drawingController.clear(),
                 icon: const Icon(Icons.clear),
+              ),
+              IconButton(
+                onPressed: () {
+                  setState(() {
+                    isErasing = !isErasing;
+                  });
+                  _drawingController
+                      .setPaintContent(isErasing ? Eraser() : SimpleLine());
+                },
+                icon: Icon(isErasing ? Icons.edit : Icons.backspace),
               ),
             ],
           ),
