@@ -108,10 +108,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               IconButton(
-                onPressed: () => _drawingController.clear(),
-                icon: const Icon(Icons.clear),
-              ),
-              IconButton(
                 onPressed: () {
                   setState(() {
                     isErasing = !isErasing;
@@ -120,6 +116,10 @@ class _HomePageState extends State<HomePage> {
                       .setPaintContent(isErasing ? Eraser() : SimpleLine());
                 },
                 icon: Icon(isErasing ? Icons.edit : Icons.backspace),
+              ),
+              IconButton(
+                onPressed: () => _drawingController.clear(),
+                icon: const Icon(Icons.clear),
               ),
             ],
           ),
