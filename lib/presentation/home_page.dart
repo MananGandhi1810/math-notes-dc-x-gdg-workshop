@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                 height: MediaQuery.of(context).size.height,
                 color: Colors.white,
               ),
-              panAxis: PanAxis.vertical,
+              boardPanEnabled: false,
             ),
           ),
           Row(
